@@ -64,19 +64,27 @@ a {
 }
 
 /* ===================================
+   CENTERED CONTAINER WRAPPER
+   =================================== */
+.page-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===================================
    LEFT SIDEBAR
    =================================== */
 .sidebar {
-    position: fixed;
-    left: 0;
+    position: sticky;
     top: 0;
     width: var(--sidebar-width);
     height: 100vh;
     padding: 48px 32px;
     display: flex;
     flex-direction: column;
-    z-index: 100;
-    border-right: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
 .sidebar-logo {
@@ -142,8 +150,8 @@ a {
    MAIN CONTENT
    =================================== */
 .main {
-    margin-left: var(--sidebar-width);
-    padding: 80px 48px;
+    flex: 1;
+    padding: 48px 48px 80px;
     min-height: 100vh;
 }
 

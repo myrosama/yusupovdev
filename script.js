@@ -1,94 +1,150 @@
 /**
- * Yusupov Dev Portfolio
- * JavaScript for animations and interactions
+ * Boboxon Yusupov Portfolio
+ * Minimal interactions with explode animation
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize all modules
-    initScrollAnimations();
+    initProjectOverlay();
     initSmoothScroll();
-    initNavbar();
-    initTypingEffect();
-    initParallax();
-    initMobileMenu();
+    initActiveNavLink();
+    initFadeInAnimations();
 });
 
-/**
- * Scroll-triggered animations using Intersection Observer
- */
-function initScrollAnimations() {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+// Project data
+const projectsData = {
+    'shoxa': {
+        title: 'SHOXA',
+        desc: 'My startup — a full-scale platform built with TypeScript and React Native. Designed for scalability, performance, and reliability in production environments. This is my flagship project that solves real problems for real users.',
+        github: 'https://github.com/myrosama/shoxa',
+        live: null
+    },
+    'telegram-cloud': {
+        title: 'Telegram Cloud Backup',
+        desc: 'An innovative solution that uses Telegram as an unlimited cloud storage backend. Store and retrieve large files using a distributed architecture that leverages Telegram\'s infrastructure. Perfect for low-resource environments.',
+        github: 'https://github.com/myrosama/telegram-cloud-backup',
+        live: null
+    },
+    'alfa-sat': {
+        title: 'ALFA_SAT',
+        desc: 'A satellite communication and monitoring system built with JavaScript. Designed for reliable data transmission in challenging conditions. Part of the ALFA ecosystem.',
+        github: 'https://github.com/myrosama/ALFA_SAT',
+        live: null
+    },
+    'daemon': {
+        title: 'DaemonClient',
+        desc: 'A web-based client interface for daemon process management and monitoring. Clean UI for managing background processes with real-time updates.',
+        github: 'https://github.com/myrosama/DaemonClient',
+        live: null
+    },
+    'alfa-consulting': {
+        title: 'ALFA Consulting',
+        desc: 'A professional consulting platform designed for enterprise clients. Clean, professional design that builds trust and converts visitors.',
+        github: 'https://github.com/myrosama/ALFACONSULTING',
+        live: null
+    },
+    'uzb-economy': {
+        title: 'UZB Economy Portal',
+        desc: 'Uzbekistan economy data visualization and information portal. A public service project providing accessible economic data for citizens and researchers.',
+        github: 'https://github.com/myrosama/uzb-economy-portal',
+        live: null
+    }
+};
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                // Unobserve after animation to improve performance
-                observer.unobserve(entry.target);
+/**
+ * Project overlay with explode animation (sachrab ketishi)
+ */
+function initProjectOverlay() {
+    const overlay = document.getElementById('projectOverlay');
+    const closeBtn = document.getElementById('overlayClose');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    // Open overlay when project is clicked
+    projectItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const projectId = item.dataset.project;
+            const project = projectsData[projectId];
+
+            if (project) {
+                // Update overlay content
+                document.getElementById('overlayTitle').textContent = project.title;
+                document.getElementById('overlayDesc').textContent = project.desc;
+
+                const githubLink = document.getElementById('overlayGithub');
+                const liveLink = document.getElementById('overlayLive');
+
+                if (project.github) {
+                    githubLink.href = project.github;
+                    githubLink.style.display = 'inline-block';
+                } else {
+                    githubLink.style.display = 'none';
+                }
+
+                if (project.live) {
+                    liveLink.href = project.live;
+                    liveLink.style.display = 'inline-block';
+                } else {
+                    liveLink.style.display = 'none';
+                }
+
+                // Store click position for animation origin
+                const rect = item.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                // Set custom properties for animation origin
+                overlay.style.setProperty('--origin-x', `${centerX}px`);
+                overlay.style.setProperty('--origin-y', `${centerY}px`);
+
+                // Open overlay
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+
+                // Add subtle randomization to explode pieces
+                randomizeExplodePieces();
             }
         });
-    }, observerOptions);
-
-    // Add fade-in class to sections and observe
-    const animatedElements = document.querySelectorAll(
-        '.section-header, .about-content, .about-visual, .project-card, .contact-content, .contact-visual'
-    );
-
-    animatedElements.forEach((el, index) => {
-        el.classList.add('fade-in');
-        el.classList.add(`stagger-${(index % 6) + 1}`);
-        observer.observe(el);
     });
 
-    // Stats counter animation
-    const stats = document.querySelectorAll('.stat-number');
-    const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                statsObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+    // Close overlay
+    closeBtn.addEventListener('click', closeOverlay);
 
-    stats.forEach(stat => statsObserver.observe(stat));
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) {
+            closeOverlay();
+        }
+    });
+
+    // Close when clicking outside the main content
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            closeOverlay();
+        }
+    });
+
+    function closeOverlay() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
 /**
- * Animate counter numbers
+ * Randomize explode pieces for variety
  */
-function animateCounter(element) {
-    const text = element.textContent;
-    const match = text.match(/(\d+)/);
+function randomizeExplodePieces() {
+    const pieces = document.querySelectorAll('.explode-piece');
 
-    if (!match) return;
+    pieces.forEach(piece => {
+        // Random rotation offset
+        const rotateOffset = (Math.random() - 0.5) * 10;
+        // Random position offset
+        const xOffset = (Math.random() - 0.5) * 20;
+        const yOffset = (Math.random() - 0.5) * 20;
 
-    const target = parseInt(match[1]);
-    const prefix = text.slice(0, text.indexOf(match[1]));
-    const suffix = text.slice(text.indexOf(match[1]) + match[1].length);
-    const duration = 2000;
-    const startTime = performance.now();
-
-    function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        // Ease out cubic
-        const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.floor(eased * target);
-
-        element.textContent = `${prefix}${current}${suffix}`;
-
-        if (progress < 1) {
-            requestAnimationFrame(update);
-        }
-    }
-
-    requestAnimationFrame(update);
+        piece.style.setProperty('--rotate-offset', `${rotateOffset}deg`);
+        piece.style.setProperty('--x-offset', `${xOffset}px`);
+        piece.style.setProperty('--y-offset', `${yOffset}px`);
+    });
 }
 
 /**
@@ -97,221 +153,140 @@ function animateCounter(element) {
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return; // Skip empty anchors
+
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
 
             if (target) {
-                const navHeight = document.querySelector('.nav').offsetHeight;
-                const targetPosition = target.offsetTop - navHeight - 20;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
 
-                // Close mobile menu if open
-                document.body.classList.remove('nav-open');
+                // Update active nav link
+                updateActiveNavLink(href);
             }
         });
     });
 }
 
 /**
- * Navbar scroll effects
+ * Track active section on scroll
  */
-function initNavbar() {
-    const nav = document.querySelector('.nav');
-    let lastScroll = 0;
-    let ticking = false;
+function initActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
 
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                const currentScroll = window.scrollY;
-
-                // Add/remove scrolled class for background
-                if (currentScroll > 50) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
-                }
-
-                // Hide/show navbar on scroll direction
-                if (currentScroll > lastScroll && currentScroll > 500) {
-                    nav.style.transform = 'translateY(-100%)';
-                } else {
-                    nav.style.transform = 'translateY(0)';
-                }
-
-                lastScroll = currentScroll;
-                ticking = false;
-            });
-            ticking = true;
-        }
-    });
-}
-
-/**
- * Typing effect for terminal
- */
-function initTypingEffect() {
-    const terminal = document.querySelector('.terminal-body code');
-    if (!terminal) return;
-
-    // The terminal content is pre-rendered, so we just add the cursor animation
-    // This keeps the page functional even without JS
-}
-
-/**
- * Parallax effect for floating elements
- */
-function initParallax() {
-    const shapes = document.querySelectorAll('.clay-shape');
-    const cards = document.querySelectorAll('.floating-card');
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let currentX = 0;
-    let currentY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX - window.innerWidth / 2) / 50;
-        mouseY = (e.clientY - window.innerHeight / 2) / 50;
-    });
-
-    function animate() {
-        // Smooth interpolation
-        currentX += (mouseX - currentX) * 0.05;
-        currentY += (mouseY - currentY) * 0.05;
-
-        shapes.forEach((shape, index) => {
-            const depth = (index + 1) * 0.5;
-            shape.style.transform = `translate(calc(-50% + ${currentX * depth}px), calc(-50% + ${currentY * depth}px))`;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                updateActiveNavLink(`#${id}`);
+            }
         });
+    }, {
+        rootMargin: '-20% 0px -80% 0px',
+        threshold: 0
+    });
 
-        cards.forEach((card, index) => {
-            const depth = (index + 1) * 0.3;
-            const baseTransform = card.style.transform || '';
-            // Only apply mouse movement, keep original position
-            card.style.marginLeft = `${currentX * depth}px`;
-            card.style.marginTop = `${currentY * depth}px`;
+    sections.forEach(section => observer.observe(section));
+}
+
+function updateActiveNavLink(href) {
+    const navLinks = document.querySelectorAll('.sidebar-nav .nav-link');
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === href) {
+            link.classList.add('active');
+        }
+    });
+}
+
+/**
+ * Fade in animations on scroll
+ */
+function initFadeInAnimations() {
+    const elements = document.querySelectorAll('.project-item, .about-content, .contact-links');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add staggered delay
+                entry.target.style.transitionDelay = `${index * 0.05}s`;
+                entry.target.classList.add('fade-in-visible');
+                observer.unobserve(entry.target);
+            }
         });
-
-        requestAnimationFrame(animate);
-    }
-
-    // Only enable parallax on non-touch devices
-    if (!('ontouchstart' in window)) {
-        animate();
-    }
-}
-
-/**
- * Mobile menu toggle
- */
-function initMobileMenu() {
-    const toggle = document.querySelector('.nav-mobile-toggle');
-    const nav = document.querySelector('.nav');
-
-    if (!toggle) return;
-
-    toggle.addEventListener('click', () => {
-        nav.classList.toggle('nav-open');
-        document.body.classList.toggle('nav-open');
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!nav.contains(e.target) && nav.classList.contains('nav-open')) {
-            nav.classList.remove('nav-open');
-            document.body.classList.remove('nav-open');
-        }
+    elements.forEach(el => {
+        el.classList.add('fade-in-element');
+        observer.observe(el);
     });
 }
 
-/**
- * Add subtle magnetic effect to buttons
- */
-document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener('mousemove', (e) => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-
-        btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
-    });
-
-    btn.addEventListener('mouseleave', () => {
-        btn.style.transform = '';
-    });
-});
-
-/**
- * Project card hover effects
- */
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function () {
-        this.style.zIndex = '10';
-    });
-
-    card.addEventListener('mouseleave', function () {
-        this.style.zIndex = '';
-    });
-});
-
-/**
- * Add page load animation
- */
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-
-    // Animate hero elements sequentially
-    const heroElements = document.querySelectorAll('.hero-badge, .hero-title, .hero-subtitle, .hero-description, .hero-actions, .hero-stats');
-
-    heroElements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-
-        setTimeout(() => {
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            el.style.opacity = '1';
-            el.style.transform = 'translateY(0)';
-        }, 200 + (index * 100));
-    });
-});
-
-/**
- * Easter egg: Konami code
- */
-const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-let konamiIndex = 0;
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === konamiCode[konamiIndex]) {
-        konamiIndex++;
-        if (konamiIndex === konamiCode.length) {
-            activateEasterEgg();
-            konamiIndex = 0;
-        }
-    } else {
-        konamiIndex = 0;
-    }
-});
-
-function activateEasterEgg() {
-    document.body.style.animation = 'rainbow 2s linear';
-
-    setTimeout(() => {
-        document.body.style.animation = '';
-    }, 2000);
-}
-
-// Add rainbow animation to stylesheet dynamically
+// Add fade-in styles dynamically
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes rainbow {
-        0% { filter: hue-rotate(0deg); }
-        100% { filter: hue-rotate(360deg); }
+    .fade-in-element {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .fade-in-visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 `;
 document.head.appendChild(style);
+
+/**
+ * Handle hero section links with external indicator
+ */
+document.querySelectorAll('.hero-links .link').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        link.style.transform = 'translateX(4px)';
+    });
+
+    link.addEventListener('mouseleave', () => {
+        link.style.transform = 'translateX(0)';
+    });
+});
+
+/**
+ * Project item keyboard accessibility
+ */
+document.querySelectorAll('.project-item').forEach(item => {
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('role', 'button');
+
+    item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            item.click();
+        }
+    });
+});
+
+/**
+ * Console easter egg
+ */
+console.log(`
+╔══════════════════════════════════════════╗
+║                                          ║
+║   👋 Hey, thanks for checking the        ║
+║      console! I'm Boboxon Yusupov.       ║
+║                                          ║
+║   📧 Let's connect:                      ║
+║      github.com/myrosama                 ║
+║                                          ║
+╚══════════════════════════════════════════╝
+`);

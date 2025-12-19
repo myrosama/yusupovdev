@@ -1,451 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yusupov - Systems Security Engineer & Founder specializing in resilient distributed architectures for low-resource environments.">
-    <title>Yusupov | Systems Security Engineer</title>
+    <meta name="description" content="Boboxon Yusupov - Systems Security Engineer & Founder">
+    <title>Boboxon Yusupov</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Ambient Background -->
-    <div class="ambient-bg">
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-        <div class="glow glow-3"></div>
-    </div>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <span class="logo-icon">Y</span>
-                <span class="logo-text">usupov</span>
+<body>
+    <!-- Left Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-logo">B</div>
+        <ul class="sidebar-nav">
+            <li><a href="#" class="nav-link active">home</a></li>
+            <li><a href="#projects" class="nav-link">projects</a></li>
+            <li><a href="#about" class="nav-link">about</a></li>
+            <li><a href="#contact" class="nav-link">contact</a></li>
+        </ul>
+        <div class="sidebar-social">
+            <a href="https://github.com/myrosama" target="_blank" aria-label="GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
             </a>
-            <div class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="https://github.com/myrosama" target="_blank" class="nav-link nav-link-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                </a>
-            </div>
-            <button class="nav-mobile-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <a href="https://t.me/yourusername" target="_blank" aria-label="Telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                </svg>
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero: Simple Text Intro -->
+        <section class="hero" id="home">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    Available for consulting
-                </div>
-                <h1 class="hero-title">
-                    <span class="title-line">Yusupov</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Systems Security Engineer & Founder
+                <h1 class="hero-name">Boboxon Yusupov</h1>
+                <p class="hero-intro">
+                    I'm a <strong>Systems Security Engineer</strong> and <strong>Founder</strong> based in Uzbekistan.
+                    I specialize in building resilient distributed architectures for low-resource environments.
                 </p>
-                <p class="hero-description">
-                    Specializing in the <span class="highlight">resilience of distributed architectures</span> 
-                    within low-resource environments. Building robust systems that work where others fail.
+                <p class="hero-intro">
+                    Currently working on <a href="https://github.com/myrosama/shoxa" class="link">SHOXA</a> —
+                    a startup I founded. Previously built cloud backup solutions using
+                    <a href="https://github.com/myrosama/telegram-cloud-backup" class="link">Telegram as storage</a>.
                 </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
-                        <span>View Projects</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">17+</span>
-                        <span class="stat-label">Repositories</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">∞</span>
-                        <span class="stat-label">Coffee Consumed</span>
-                    </div>
+                <p class="hero-intro">
+                    I believe in building systems that work reliably, even when conditions aren't ideal.
+                </p>
+                <div class="hero-links">
+                    <a href="https://github.com/myrosama" class="link">↗ github</a>
+                    <a href="mailto:your@email.com" class="link">↗ email</a>
+                    <a href="https://t.me/yourusername" class="link">↗ telegram</a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="clay-shape shape-1"></div>
-                <div class="clay-shape shape-2"></div>
-                <div class="clay-shape shape-3"></div>
-                <div class="floating-card card-1">
-                    <div class="card-icon">🔐</div>
-                    <span>Security</span>
-                </div>
-                <div class="floating-card card-2">
-                    <div class="card-icon">⚡</div>
-                    <span>Performance</span>
-                </div>
-                <div class="floating-card card-3">
-                    <div class="card-icon">🌐</div>
-                    <span>Distributed</span>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
-            </div>
-            <span>Scroll to explore</span>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">About</span>
-                <h2 class="section-title">Building systems that <span class="gradient-text">never break</span></h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-content">
-                    <p class="about-text">
-                        I'm a Systems Security Engineer with a deep focus on building resilient distributed systems 
-                        that thrive in challenging, low-resource environments. My work spans from designing secure 
-                        architectures to implementing robust backup solutions that leverage unconventional platforms.
-                    </p>
-                    <p class="about-text">
-                        As a founder, I've built products that solve real problems — from enterprise consulting 
-                        platforms to innovative cloud solutions using Telegram as a backend. I believe in 
-                        creating technology that works reliably, even when conditions aren't ideal.
-                    </p>
-                    <div class="tech-stack">
-                        <h3 class="tech-title">Core Technologies</h3>
-                        <div class="tech-pills">
-                            <span class="tech-pill">TypeScript</span>
-                            <span class="tech-pill">Python</span>
-                            <span class="tech-pill">JavaScript</span>
-                            <span class="tech-pill">Linux</span>
-                            <span class="tech-pill">Docker</span>
-                            <span class="tech-pill">Kubernetes</span>
-                            <span class="tech-pill">Firebase</span>
-                            <span class="tech-pill">PostgreSQL</span>
-                            <span class="tech-pill">Redis</span>
-                            <span class="tech-pill">Nginx</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="terminal-card">
-                        <div class="terminal-header">
-                            <div class="terminal-dots">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                            </div>
-                            <span class="terminal-title">yusupov@systems</span>
-                        </div>
-                        <div class="terminal-body">
-                            <code>
-                                <span class="prompt">$</span> <span class="cmd">whoami</span><br>
-                                <span class="output">Security Engineer & Founder</span><br><br>
-                                <span class="prompt">$</span> <span class="cmd">cat skills.txt</span><br>
-                                <span class="output">→ Distributed Systems</span><br>
-                                <span class="output">→ Security Architecture</span><br>
-                                <span class="output">→ Low-Resource Computing</span><br>
-                                <span class="output">→ Cloud Infrastructure</span><br><br>
-                                <span class="prompt">$</span> <span class="cmd">uptime</span><br>
-                                <span class="output">systems running: 5+ years</span><br>
-                                <span class="cursor"></span>
-                            </code>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <h2 class="section-title">Projects</h2>
+            <p class="section-subtitle">Click on a project to explore</p>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">Projects</span>
-                <h2 class="section-title">Featured <span class="gradient-text">work</span></h2>
-                <p class="section-description">A selection of projects that showcase my expertise in building resilient systems</p>
-            </div>
-            <div class="projects-grid">
-                <!-- Featured Project - SHOXA -->
-                <article class="project-card project-featured">
-                    <div class="project-image">
-                        <div class="project-placeholder">
-                            <span class="placeholder-icon">📱</span>
-                            <span class="placeholder-text">SHOXA</span>
-                        </div>
-                        <div class="project-overlay">
-                            <span class="project-label">Startup</span>
+            <div class="projects-list">
+                <!-- Project 1: SHOXA -->
+                <article class="project-item" data-project="shoxa">
+                    <div class="project-content">
+                        <span class="project-number">01</span>
+                        <h3 class="project-name">SHOXA</h3>
+                        <p class="project-desc">My startup — a full-scale platform built with TypeScript for scalability
+                            and performance.</p>
+                        <div class="project-meta">
+                            <span class="tag">Startup</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">React Native</span>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">SHOXA</h3>
-                        <p class="project-description">
-                            A full-scale startup application built with TypeScript. Comprehensive platform 
-                            designed for scalability and performance in production environments.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Firebase</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/myrosama/shoxa" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
+                    <div class="project-arrow">→</div>
                 </article>
 
-                <!-- Telegram Cloud Backup -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder placeholder-blue">
-                            <span class="placeholder-icon">☁️</span>
+                <!-- Project 2: Telegram Cloud -->
+                <article class="project-item" data-project="telegram-cloud">
+                    <div class="project-content">
+                        <span class="project-number">02</span>
+                        <h3 class="project-name">Telegram Cloud Backup</h3>
+                        <p class="project-desc">Unlimited cloud storage using Telegram as a backend. Store and retrieve
+                            large files with distributed architecture.</p>
+                        <div class="project-meta">
+                            <span class="tag">Python</span>
+                            <span class="tag">Telegram API</span>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Telegram Cloud Backup</h3>
-                        <p class="project-description">
-                            Unlimited cloud storage solution using Telegram as a backend. Store and retrieve 
-                            large files with innovative distributed architecture.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Telegram API</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/myrosama/telegram-cloud-backup" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
+                    <div class="project-arrow">→</div>
                 </article>
 
-                <!-- ALFA_SAT -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder placeholder-green">
-                            <span class="placeholder-icon">🛰️</span>
+                <!-- Project 3: ALFA_SAT -->
+                <article class="project-item" data-project="alfa-sat">
+                    <div class="project-content">
+                        <span class="project-number">03</span>
+                        <h3 class="project-name">ALFA_SAT</h3>
+                        <p class="project-desc">Satellite communication and monitoring system for reliable data
+                            transmission.</p>
+                        <div class="project-meta">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">IoT</span>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">ALFA_SAT</h3>
-                        <p class="project-description">
-                            Satellite communication and monitoring system built with JavaScript for 
-                            reliable data transmission.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/myrosama/ALFA_SAT" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
+                    <div class="project-arrow">→</div>
                 </article>
 
-                <!-- DaemonClient -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder placeholder-coral">
-                            <span class="placeholder-icon">🖥️</span>
+                <!-- Project 4: DaemonClient -->
+                <article class="project-item" data-project="daemon">
+                    <div class="project-content">
+                        <span class="project-number">04</span>
+                        <h3 class="project-name">DaemonClient</h3>
+                        <p class="project-desc">Web-based client for daemon process management and monitoring.</p>
+                        <div class="project-meta">
+                            <span class="tag">HTML</span>
+                            <span class="tag">JavaScript</span>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">DaemonClient</h3>
-                        <p class="project-description">
-                            Web-based client interface for daemon process management and monitoring.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/myrosama/DaemonClient" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
+                    <div class="project-arrow">→</div>
                 </article>
 
-                <!-- ALFACONSULTING -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder placeholder-mint">
-                            <span class="placeholder-icon">💼</span>
+                <!-- Project 5: ALFA Consulting -->
+                <article class="project-item" data-project="alfa-consulting">
+                    <div class="project-content">
+                        <span class="project-number">05</span>
+                        <h3 class="project-name">ALFA Consulting</h3>
+                        <p class="project-desc">Professional consulting platform for enterprise clients.</p>
+                        <div class="project-meta">
+                            <span class="tag">Web</span>
+                            <span class="tag">Business</span>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">ALFA Consulting</h3>
-                        <p class="project-description">
-                            Professional consulting platform for enterprise clients.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/myrosama/ALFACONSULTING" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
+                    <div class="project-arrow">→</div>
                 </article>
 
-                <!-- UZB Economy Portal -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-placeholder placeholder-amber">
-                            <span class="placeholder-icon">📊</span>
+                <!-- Project 6: UZB Economy Portal -->
+                <article class="project-item" data-project="uzb-economy">
+                    <div class="project-content">
+                        <span class="project-number">06</span>
+                        <h3 class="project-name">UZB Economy Portal</h3>
+                        <p class="project-desc">Uzbekistan economy data visualization and information portal.</p>
+                        <div class="project-meta">
+                            <span class="tag">Data Viz</span>
+                            <span class="tag">Public Service</span>
                         </div>
                     </div>
-                    <div class="project-info">
-                        <h3 class="project-title">UZB Economy Portal</h3>
-                        <p class="project-description">
-                            Uzbekistan economy data visualization and information portal.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">Data Viz</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/myrosama/uzb-economy-portal" target="_blank" class="project-link">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                                View Code
-                            </a>
-                        </div>
-                    </div>
+                    <div class="project-arrow">→</div>
                 </article>
             </div>
 
-            <div class="projects-cta">
-                <a href="https://github.com/myrosama?tab=repositories" target="_blank" class="btn btn-outline">
-                    View All Projects on GitHub
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                    </svg>
+            <a href="https://github.com/myrosama?tab=repositories" target="_blank" class="view-all-link">
+                View all projects on GitHub ↗
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <p>
+                    I'm Boboxon, a Systems Security Engineer with a deep focus on building
+                    resilient distributed systems that thrive in challenging, low-resource environments.
+                </p>
+                <p>
+                    My work spans from designing secure architectures to implementing robust
+                    backup solutions that leverage unconventional platforms like Telegram for
+                    unlimited cloud storage.
+                </p>
+                <p>
+                    As a founder, I've built products that solve real problems. I believe in
+                    creating technology that works reliably, even when conditions aren't ideal.
+                </p>
+                <div class="skills">
+                    <span>TypeScript</span>
+                    <span>Python</span>
+                    <span>JavaScript</span>
+                    <span>Linux</span>
+                    <span>Docker</span>
+                    <span>Firebase</span>
+                    <span>PostgreSQL</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2 class="section-title">Get in touch</h2>
+            <p class="contact-text">
+                Have a project that needs rock-solid infrastructure? Looking for security consulting?
+                Or just want to chat about distributed systems?
+            </p>
+            <div class="contact-links">
+                <a href="mailto:your@email.com" class="contact-link">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">your@email.com</span>
+                </a>
+                <a href="https://github.com/myrosama" target="_blank" class="contact-link">
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">@myrosama</span>
+                </a>
+                <a href="https://t.me/yourusername" target="_blank" class="contact-link">
+                    <span class="contact-label">Telegram</span>
+                    <span class="contact-value">@yourusername</span>
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="section-container">
-            <div class="contact-wrapper">
-                <div class="contact-content">
-                    <span class="section-tag">Contact</span>
-                    <h2 class="section-title">Let's build something <span class="gradient-text">resilient</span></h2>
-                    <p class="contact-description">
-                        Have a project that needs rock-solid infrastructure? Looking for security consulting? 
-                        Or just want to chat about distributed systems? I'd love to hear from you.
-                    </p>
-                    <div class="contact-links">
-                        <a href="mailto:your@email.com" class="contact-item">
-                            <div class="contact-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
-                            <div class="contact-info">
-                                <span class="contact-label">Email</span>
-                                <span class="contact-value">your@email.com</span>
-                            </div>
-                        </a>
-                        <a href="https://github.com/myrosama" target="_blank" class="contact-item">
-                            <div class="contact-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-info">
-                                <span class="contact-label">GitHub</span>
-                                <span class="contact-value">@myrosama</span>
-                            </div>
-                        </a>
-                        <a href="https://t.me/yourusername" target="_blank" class="contact-item">
-                            <div class="contact-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-                                </svg>
-                            </div>
-                            <div class="contact-info">
-                                <span class="contact-label">Telegram</span>
-                                <span class="contact-value">@yourusername</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-visual">
-                    <div class="globe-container">
-                        <div class="globe"></div>
-                        <div class="orbit orbit-1"></div>
-                        <div class="orbit orbit-2"></div>
-                        <div class="orbit orbit-3"></div>
-                    </div>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 Boboxon Yusupov</p>
+        </footer>
+    </main>
+
+    <!-- Project Overlay (for explode animation) -->
+    <div class="project-overlay" id="projectOverlay">
+        <button class="overlay-close" id="overlayClose">×</button>
+        <div class="overlay-content">
+            <div class="explode-piece piece-1"></div>
+            <div class="explode-piece piece-2"></div>
+            <div class="explode-piece piece-3"></div>
+            <div class="explode-piece piece-4"></div>
+            <div class="explode-piece piece-5"></div>
+            <div class="explode-piece piece-6"></div>
+
+            <div class="overlay-main" id="overlayMain">
+                <h2 class="overlay-title" id="overlayTitle">Project Name</h2>
+                <p class="overlay-desc" id="overlayDesc">Project description goes here.</p>
+                <div class="overlay-links">
+                    <a href="#" class="overlay-link" id="overlayGithub" target="_blank">View on GitHub ↗</a>
+                    <a href="#" class="overlay-link" id="overlayLive" target="_blank">Live Demo ↗</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <span class="footer-logo">Yusupov</span>
-                <p class="footer-text">Building resilient systems since forever.</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/myrosama" target="_blank">GitHub</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Yusupov. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

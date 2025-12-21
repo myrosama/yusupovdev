@@ -43,6 +43,25 @@ body {
     align-items: center;
     justify-content: center;
     padding: 24px;
+    gap: 60px;
+}
+
+/* Left navigation */
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.15s;
+}
+
+.nav a:hover {
+    color: var(--text);
 }
 
 /* Content wrapper */
@@ -66,7 +85,7 @@ body {
 }
 
 .intro:last-of-type {
-    margin-bottom: 32px;
+    margin-bottom: 0;
 }
 
 /* Links in text */
@@ -80,23 +99,6 @@ body {
 
 .intro a:hover {
     text-decoration-thickness: 2px;
-}
-
-/* Navigation links */
-.nav {
-    display: flex;
-    gap: 20px;
-}
-
-.nav a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 14px;
-    transition: color 0.15s;
-}
-
-.nav a:hover {
-    color: var(--text);
 }
 
 /* Page header (for subpages) */

@@ -101,6 +101,23 @@ body {
     text-decoration-thickness: 2px;
 }
 
+/* Social icons - right side */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.social-icons a {
+    color: var(--text-muted);
+    transition: color 0.15s;
+    display: flex;
+}
+
+.social-icons a:hover {
+    color: var(--text);
+}
+
 /* Page header (for subpages) */
 .page-header {
     margin-bottom: 32px;

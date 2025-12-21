@@ -101,11 +101,12 @@ body {
     text-decoration-thickness: 2px;
 }
 
-/* Social icons - right side */
+/* Social icons - bottom right of content */
 .social-icons {
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
     gap: 16px;
+    margin-top: 24px;
 }
 
 .social-icons a {

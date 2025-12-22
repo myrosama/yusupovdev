@@ -257,6 +257,59 @@ body {
     text-decoration-thickness: 2px;
 }
 
+/* Music page */
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.music-section {
+    margin-top: 32px;
+}
+
+.music-heading {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.music-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.music-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+}
+
+.music-rank {
+    color: var(--text-muted);
+    font-size: 13px;
+    width: 20px;
+    text-align: right;
+}
+
+.music-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.music-name {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.music-artist {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
 /* Scrollable pages */
 .page.scrollable {
     height: auto;

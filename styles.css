@@ -292,6 +292,16 @@ body {
     font-size: 13px;
     width: 20px;
     text-align: right;
+    flex-shrink: 0;
+}
+
+.music-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #222;
 }
 
 .music-info {

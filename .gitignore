@@ -1,0 +1,10 @@
+# Spotify secrets - don't commit these
+get-spotify-token.js
+spotify-worker.js
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

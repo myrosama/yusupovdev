@@ -26,7 +26,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
     color: var(--text);
-    font-size: 15px;
+    font-size: 19px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
 }
@@ -46,17 +46,17 @@ body {
     gap: 60px;
 }
 
-/* Left navigation */
+/* Left navigation (home page - vertical) */
 .nav {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 
 .nav a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 17px;
     transition: color 0.15s;
 }
 
@@ -64,17 +64,23 @@ body {
     color: var(--text);
 }
 
+/* Horizontal nav for subpages */
+.nav.horizontal {
+    flex-direction: row;
+    gap: 20px;
+}
+
 /* Content wrapper */
 .content {
-    max-width: 520px;
+    max-width: 600px;
     width: 100%;
 }
 
 /* Name */
 .name {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     font-weight: 600;
-    margin-bottom: 24px;
+    margin-bottom: 30px;
     letter-spacing: -0.01em;
 }
 
@@ -304,15 +310,28 @@ body {
     background: #222;
 }
 
-.music-info {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
+.music-img-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #333;
+    flex-shrink: 0;
 }
 
 .music-name {
     color: var(--text);
     font-size: 14px;
+    text-decoration: none;
+}
+
+a.music-name:hover {
+    text-decoration: underline;
+}
+
+.music-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .music-artist {

@@ -8,8 +8,104 @@
     <title>Projects — Boboxon Yusupov</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .project-card {
+            display: block;
+            padding: 28px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .project-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .project-card-status {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-card-status.mvp {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+
+        .project-card-status.active {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+        }
+
+        .project-card-status.completed {
+            background: rgba(136, 136, 136, 0.2);
+            color: #888;
+        }
+
+        .project-card-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .project-card-desc {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .project-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .project-card-tag {
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .project-card-arrow {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .project-card:hover .project-card-arrow {
+            color: var(--text);
+        }
+    </style>
 </head>
 
 <body>
@@ -18,74 +114,62 @@
             <div class="page-header">
                 <a href="index.html" class="back-link">← back</a>
                 <h1 class="page-title">Projects</h1>
+                <p style="color: var(--text-muted); margin-top: 8px;">Click on a project to learn more</p>
             </div>
 
-            <div class="projects-list">
-                <div class="project">
-                    <h3 class="project-name"><a href="https://github.com/myrosama/shoxa" target="_blank">SHOXA</a></h3>
-                    <p class="project-desc">My startup — a full-scale platform built for scalability and performance in
-                        production environments.</p>
-                    <div class="project-tags">
-                        <span class="tag">Startup</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">React Native</span>
+            <div class="projects-grid">
+                <!-- SHOXA -->
+                <a href="shoxa.html" class="project-card">
+                    <div class="project-card-header">
+                        <span class="project-card-status mvp">MVP</span>
+                        <span style="color: var(--text-muted); font-size: 13px;">Uzcombinator 2024</span>
                     </div>
-                </div>
+                    <h3 class="project-card-name">SHOXA</h3>
+                    <p class="project-card-desc">Hyperlocal discovery platform that connects people to nearby
+                        businesses, services, and experiences.</p>
+                    <div class="project-card-tags">
+                        <span class="project-card-tag">React Native</span>
+                        <span class="project-card-tag">TypeScript</span>
+                        <span class="project-card-tag">Firebase</span>
+                    </div>
+                    <div class="project-card-arrow">View project →</div>
+                </a>
 
-                <div class="project">
-                    <h3 class="project-name"><a href="https://github.com/myrosama/telegram-cloud-backup"
-                            target="_blank">Telegram Cloud Backup</a></h3>
-                    <p class="project-desc">Unlimited cloud storage using Telegram as a backend. Distributed
-                        architecture for storing and retrieving large files.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Telegram API</span>
+                <!-- DaemonClient -->
+                <a href="daemonclient.html" class="project-card">
+                    <div class="project-card-header">
+                        <span class="project-card-status completed">Completed</span>
                     </div>
-                </div>
+                    <h3 class="project-card-name">DaemonClient</h3>
+                    <p class="project-card-desc">Web-based client for daemon process management and monitoring. Control
+                        background services from anywhere.</p>
+                    <div class="project-card-tags">
+                        <span class="project-card-tag">JavaScript</span>
+                        <span class="project-card-tag">WebSocket</span>
+                        <span class="project-card-tag">Node.js</span>
+                    </div>
+                    <div class="project-card-arrow">View project →</div>
+                </a>
 
-                <div class="project">
-                    <h3 class="project-name"><a href="https://github.com/myrosama/ALFA_SAT" target="_blank">ALFA_SAT</a>
-                    </h3>
-                    <p class="project-desc">Satellite communication and monitoring system for reliable data
-                        transmission.</p>
-                    <div class="project-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">IoT</span>
+                <!-- alfaSAT -->
+                <a href="alfasat.html" class="project-card">
+                    <div class="project-card-header">
+                        <span class="project-card-status active">Active</span>
+                        <span style="color: var(--text-muted); font-size: 13px;">Research Project</span>
                     </div>
-                </div>
-
-                <div class="project">
-                    <h3 class="project-name"><a href="https://github.com/myrosama/DaemonClient"
-                            target="_blank">DaemonClient</a></h3>
-                    <p class="project-desc">Web-based client for daemon process management and monitoring.</p>
-                    <div class="project-tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">JavaScript</span>
+                    <h3 class="project-card-name">alfaSAT</h3>
+                    <p class="project-card-desc">Satellite communication and monitoring system for reliable data
+                        transmission in remote areas.</p>
+                    <div class="project-card-tags">
+                        <span class="project-card-tag">IoT</span>
+                        <span class="project-card-tag">Embedded</span>
+                        <span class="project-card-tag">Python</span>
                     </div>
-                </div>
-
-                <div class="project">
-                    <h3 class="project-name"><a href="https://github.com/myrosama/ALFACONSULTING" target="_blank">ALFA
-                            Consulting</a></h3>
-                    <p class="project-desc">Professional consulting platform for enterprise clients.</p>
-                    <div class="project-tags">
-                        <span class="tag">Web</span>
-                        <span class="tag">Business</span>
-                    </div>
-                </div>
-
-                <div class="project">
-                    <h3 class="project-name"><a href="https://github.com/myrosama" target="_blank">UZB Economy
-                            Portal</a></h3>
-                    <p class="project-desc">Uzbekistan economy data visualization and information portal.</p>
-                    <div class="project-tags">
-                        <span class="tag">Data</span>
-                        <span class="tag">Public Service</span>
-                    </div>
-                </div>
+                    <div class="project-card-arrow">View project →</div>
+                </a>
             </div>
 
-            <nav class="nav horizontal" style="margin-top: 32px;">
+            <nav class="nav horizontal" style="margin-top: 48px;">
                 <a href="index.html">home</a>
                 <a href="about.html">about</a>
                 <a href="contact.html">contact</a>

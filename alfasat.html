@@ -4,13 +4,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="alfaSAT - Satellite Communication System by Boboxon Yusupov">
-    <title>alfaSAT — Boboxon Yusupov</title>
+    <meta name="description" content="ALFASAT - Digital SAT Testing Platform by Boboxon Yusupov">
+    <title>ALFASAT — Boboxon Yusupov</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="project-styles.css">
+    <style>
+        /* ALFASAT Professional Styles */
+        .hero-with-logo {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+        }
+
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 24px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: #fff;
+            padding: 12px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        /* Clean button styles */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            background: #e5e5e5;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        /* Tech table */
+        .tech-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .tech-table th,
+        .tech-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .tech-table th {
+            color: #888;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 160px;
+        }
+
+        .tech-table td {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        /* Screenshot placeholder */
+        .screenshot-placeholder {
+            width: 100%;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* Note box */
+        .note-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid #888;
+            padding: 16px 20px;
+            margin-top: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .note-box p {
+            color: #888;
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .hero-with-logo {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-logo {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -20,32 +154,47 @@
 
             <!-- Hero Section -->
             <header class="project-hero">
-                <div class="project-status">
-                    <span class="status-badge active">Active</span>
-                    <span class="status-text">Research Project</span>
+                <div class="hero-with-logo">
+                    <img src="photos/alfaSAT/logo.png" alt="ALFASAT Logo" class="hero-logo">
+                    <div class="hero-content">
+                        <div class="project-status">
+                            <span class="status-badge active">Active</span>
+                            <span class="status-text">B2B Platform</span>
+                        </div>
+                        <h1 class="project-title">ALFASAT</h1>
+                        <p class="project-tagline">A Digital SAT testing platform for learning centres and students,
+                            enabling high-fidelity practice tests with automated scoring based on official College
+                            Board conversion tables.</p>
+                    </div>
                 </div>
-                <h1 class="project-title">alfaSAT</h1>
-                <p class="project-tagline">Satellite communication and monitoring system for reliable data transmission
-                    in remote areas.</p>
+
+                <div class="btn-group">
+                    <a href="https://alfasat.uz" target="_blank" class="btn btn-primary">
+                        Visit Website
+                    </a>
+                    <a href="https://github.com/myrosama/ALFA_SAT" target="_blank" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
             </header>
 
-            <!-- Problem & Solution -->
+            <!-- Overview -->
             <section class="project-section">
-                <h2 class="section-heading">The Problem</h2>
+                <h2 class="section-heading">Overview</h2>
                 <p class="section-text">
-                    Remote areas in Central Asia often lack reliable internet connectivity.
-                    IoT devices, weather stations, and monitoring systems need a way to transmit data
-                    even when traditional networks are unavailable.
+                    ALFASAT is an online exam platform for the new Digital SAT, enabling learning centres and students
+                    to conduct high-fidelity practice tests. The platform incorporates an automated scoring engine
+                    based on official College Board raw-to-scaled conversion tables, providing instant domain and
+                    skill-level breakdowns.
                 </p>
-            </section>
 
-            <section class="project-section">
-                <h2 class="section-heading">The Solution</h2>
-                <p class="section-text">
-                    alfaSAT is a satellite communication system designed for low-bandwidth,
-                    high-reliability data transmission. It enables IoT devices to send telemetry data
-                    via satellite, ensuring connectivity in the most remote locations.
-                </p>
+                <div class="screenshot-placeholder">
+                    Screenshots coming soon
+                </div>
             </section>
 
             <!-- Key Features -->
@@ -53,59 +202,88 @@
                 <h2 class="section-heading">Key Features</h2>
                 <div class="features-grid">
                     <div class="feature-item">
-                        <span class="feature-icon">🛰️</span>
+                        <span class="feature-icon">📊</span>
                         <div class="feature-content">
-                            <h3>Satellite Link</h3>
-                            <p>Direct communication with LEO satellites</p>
+                            <h3>Automated Scoring</h3>
+                            <p>Official College Board conversion tables with instant domain breakdowns</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <span class="feature-icon">📡</span>
+                        <span class="feature-icon">📄</span>
                         <div class="feature-content">
-                            <h3>IoT Integration</h3>
-                            <p>Compatible with standard IoT protocols</p>
+                            <h3>PDF Test Import</h3>
+                            <p>Upload PDF tests, automatically parse questions using Gemini API</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <span class="feature-icon">⚡</span>
+                        <span class="feature-icon">📐</span>
                         <div class="feature-content">
-                            <h3>Low Power</h3>
-                            <p>Optimized for solar-powered deployments</p>
+                            <h3>Math Rendering</h3>
+                            <p>LaTeX-formatted equations using KaTeX and MathQuill</p>
                         </div>
                     </div>
                     <div class="feature-item">
-                        <span class="feature-icon">🌍</span>
+                        <span class="feature-icon">🖩</span>
                         <div class="feature-content">
-                            <h3>Global Coverage</h3>
-                            <p>Works anywhere on Earth</p>
+                            <h3>Desmos Calculator</h3>
+                            <p>Integrated Desmos calculator, just like the real Digital SAT</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔒</span>
+                        <div class="feature-content">
+                            <h3>Proctoring Controls</h3>
+                            <p>Fullscreen enforcement and session codes for supervised testing</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">📈</span>
+                        <div class="feature-content">
+                            <h3>Analytics Dashboard</h3>
+                            <p>Per-student performance tracking by module, domain, and skill</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Tech Stack -->
+            <!-- Technology Stack -->
             <section class="project-section">
-                <h2 class="section-heading">Tech Stack</h2>
-                <div class="tech-pills">
-                    <span class="tech-pill">JavaScript</span>
-                    <span class="tech-pill">IoT</span>
-                    <span class="tech-pill">Embedded Systems</span>
-                    <span class="tech-pill">Python</span>
-                    <span class="tech-pill">LoRa</span>
-                </div>
+                <h2 class="section-heading">Technology Stack</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Frontend</th>
+                        <td>React (inline Babel JSX)</td>
+                    </tr>
+                    <tr>
+                        <th>Backend</th>
+                        <td>Firebase (Firestore, Authentication)</td>
+                    </tr>
+                    <tr>
+                        <th>AI Integration</th>
+                        <td>Gemini API for PDF parsing</td>
+                    </tr>
+                    <tr>
+                        <th>PDF Processing</th>
+                        <td>PDF.js</td>
+                    </tr>
+                    <tr>
+                        <th>Math Rendering</th>
+                        <td>MathQuill, KaTeX</td>
+                    </tr>
+                    <tr>
+                        <th>Calculator</th>
+                        <td>Desmos Calculator API</td>
+                    </tr>
+                </table>
             </section>
 
-            <!-- Links -->
+            <!-- Note -->
             <section class="project-section">
-                <h2 class="section-heading">Links</h2>
-                <div class="project-links">
-                    <a href="https://github.com/myrosama/ALFA_SAT" target="_blank" class="project-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                        View on GitHub
-                    </a>
+                <div class="note-box">
+                    <p>
+                        The platform is used by multiple learning centres. Public documentation is limited as the
+                        codebase is private. The login page uses Firebase for authentication.
+                    </p>
                 </div>
             </section>
 

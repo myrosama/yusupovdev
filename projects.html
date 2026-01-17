@@ -26,9 +26,9 @@
             padding: 28px 32px;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
+            border-radius: 16px;
             text-decoration: none !important;
-            transition: all 0.25s ease;
+            transition: all 0.2s ease;
         }
 
         .project-card * {
@@ -36,10 +36,8 @@
         }
 
         .project-card:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.04);
             border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
         }
 
         .project-card-left {
@@ -55,7 +53,7 @@
 
         .project-card-status {
             padding: 4px 10px;
-            border-radius: 12px;
+            border-radius: 6px;
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
@@ -70,11 +68,6 @@
         .project-card-status.active {
             background: rgba(59, 130, 246, 0.15);
             color: #60a5fa;
-        }
-
-        .project-card-status.completed {
-            background: rgba(136, 136, 136, 0.15);
-            color: #a0a0a0;
         }
 
         .project-card-highlight {
@@ -103,11 +96,11 @@
         }
 
         .project-card-tag {
-            padding: 5px 12px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 6px;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
             font-size: 12px;
-            color: #999;
+            color: #888;
         }
 
         .project-card-arrow {
@@ -126,12 +119,13 @@
         }
 
         .project-card-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 18px;
-            object-fit: cover;
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            object-fit: contain;
             flex-shrink: 0;
-            background: rgba(255, 255, 255, 0.05);
+            background: #fff;
+            padding: 8px;
         }
 
         @media (max-width: 600px) {
@@ -142,8 +136,8 @@
             }
 
             .project-card-logo {
-                width: 60px;
-                height: 60px;
+                width: 56px;
+                height: 56px;
             }
         }
     </style>
@@ -159,6 +153,27 @@
             </div>
 
             <div class="projects-grid">
+                <!-- DaemonClient -->
+                <a href="daemonclient.html" class="project-card">
+                    <div class="project-card-left">
+                        <div class="project-card-header">
+                            <span class="project-card-status active">Active</span>
+                            <span class="project-card-highlight">Open Source</span>
+                        </div>
+                        <h3 class="project-card-name">DaemonClient</h3>
+                        <p class="project-card-desc">Secure, open-source cloud storage that provisions a user-owned
+                            Telegram bot and private channel as a personal, zero-cost file vault.</p>
+                        <div class="project-card-tags">
+                            <span class="project-card-tag">React</span>
+                            <span class="project-card-tag">Python</span>
+                            <span class="project-card-tag">Telegram Bot API</span>
+                            <span class="project-card-tag">AES-256-GCM</span>
+                        </div>
+                        <div class="project-card-arrow">View project →</div>
+                    </div>
+                    <img src="photos/DaemonClient/logo.png" alt="DaemonClient" class="project-card-logo">
+                </a>
+
                 <!-- SHOXA -->
                 <a href="shoxa.html" class="project-card">
                     <div class="project-card-left">
@@ -170,54 +185,37 @@
                         </div>
                         <h3 class="project-card-name">SHOXA</h3>
                         <p class="project-card-desc">Hyperlocal discovery platform that connects people to nearby
-                            businesses, services, and experiences.</p>
+                            businesses, making every small business in Uzbekistan visible on an interactive map.</p>
                         <div class="project-card-tags">
                             <span class="project-card-tag">React Native</span>
                             <span class="project-card-tag">TypeScript</span>
                             <span class="project-card-tag">Firebase</span>
+                            <span class="project-card-tag">Google Maps</span>
                         </div>
                         <div class="project-card-arrow">View project →</div>
                     </div>
                     <img src="photos/SHOXA/logo.png" alt="SHOXA" class="project-card-logo">
                 </a>
 
-                <!-- DaemonClient -->
-                <a href="daemonclient.html" class="project-card">
-                    <div class="project-card-left">
-                        <div class="project-card-header">
-                            <span class="project-card-status completed">Completed</span>
-                        </div>
-                        <h3 class="project-card-name">DaemonClient</h3>
-                        <p class="project-card-desc">Web-based client for daemon process management and monitoring.
-                            Control background services from anywhere.</p>
-                        <div class="project-card-tags">
-                            <span class="project-card-tag">JavaScript</span>
-                            <span class="project-card-tag">WebSocket</span>
-                            <span class="project-card-tag">Node.js</span>
-                        </div>
-                        <div class="project-card-arrow">View project →</div>
-                    </div>
-                    <img src="photos/DaemonClient/logo.png" alt="DaemonClient" class="project-card-logo">
-                </a>
-
-                <!-- alfaSAT -->
+                <!-- ALFASAT -->
                 <a href="alfasat.html" class="project-card">
                     <div class="project-card-left">
                         <div class="project-card-header">
                             <span class="project-card-status active">Active</span>
-                            <span class="project-card-highlight">Research Project</span>
+                            <span class="project-card-highlight">B2B Platform</span>
                         </div>
-                        <h3 class="project-card-name">alfaSAT</h3>
-                        <p class="project-card-desc">Satellite communication and monitoring system for reliable data
-                            transmission in remote areas.</p>
+                        <h3 class="project-card-name">ALFASAT</h3>
+                        <p class="project-card-desc">Digital SAT testing platform for learning centres with automated
+                            scoring, PDF test import, and comprehensive analytics.</p>
                         <div class="project-card-tags">
-                            <span class="project-card-tag">IoT</span>
-                            <span class="project-card-tag">Embedded</span>
-                            <span class="project-card-tag">Python</span>
+                            <span class="project-card-tag">React</span>
+                            <span class="project-card-tag">Firebase</span>
+                            <span class="project-card-tag">Gemini API</span>
+                            <span class="project-card-tag">KaTeX</span>
                         </div>
                         <div class="project-card-arrow">View project →</div>
                     </div>
-                    <img src="photos/alfaSAT/logo.png" alt="alfaSAT" class="project-card-logo">
+                    <img src="photos/alfaSAT/logo.png" alt="ALFASAT" class="project-card-logo">
                 </a>
             </div>
 

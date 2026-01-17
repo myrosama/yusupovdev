@@ -4,13 +4,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DaemonClient - Daemon Process Manager by Boboxon Yusupov">
+    <meta name="description" content="DaemonClient - Zero-Knowledge Cloud Storage by Boboxon Yusupov">
     <title>DaemonClient — Boboxon Yusupov</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="project-styles.css">
+    <style>
+        /* DaemonClient Professional Styles */
+        .hero-with-logo {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+        }
+
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 24px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: #fff;
+            padding: 12px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .screenshot-gallery {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+            overflow-x: auto;
+            padding-bottom: 16px;
+        }
+
+        .screenshot-gallery::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .screenshot-gallery::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 3px;
+        }
+
+        .screenshot-gallery::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 3px;
+        }
+
+        .screenshot-item {
+            flex-shrink: 0;
+            max-width: 400px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            display: block;
+        }
+
+        .screenshot-caption {
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 13px;
+            color: #888;
+        }
+
+        .architecture-image {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tech-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .tech-table th,
+        .tech-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .tech-table th {
+            color: #888;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 160px;
+        }
+
+        .tech-table td {
+            color: var(--text);
+            font-size: 14px;
+        }
+
+        /* Clean button styles - no gradients */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            background: #e5e5e5;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 600px) {
+            .hero-with-logo {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-logo {
+                width: 80px;
+                height: 80px;
+            }
+
+            .screenshot-item {
+                max-width: 300px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -20,30 +175,85 @@
 
             <!-- Hero Section -->
             <header class="project-hero">
-                <div class="project-status">
-                    <span class="status-badge completed">Completed</span>
+                <div class="hero-with-logo">
+                    <img src="photos/DaemonClient/logo.png" alt="DaemonClient Logo" class="hero-logo">
+                    <div class="hero-content">
+                        <div class="project-status">
+                            <span class="status-badge active">Active</span>
+                            <span class="status-text">Open Source</span>
+                        </div>
+                        <h1 class="project-title">DaemonClient</h1>
+                        <p class="project-tagline">A secure, open-source cloud storage platform that provisions a
+                            user-owned Telegram bot and private channel to function as a personal, zero-cost file
+                            vault.</p>
+                    </div>
                 </div>
-                <h1 class="project-title">DaemonClient</h1>
-                <p class="project-tagline">Web-based client for daemon process management and monitoring. Control
-                    background services from anywhere.</p>
+
+                <div class="btn-group">
+                    <a href="https://daemonclient.uz" target="_blank" class="btn btn-primary">
+                        Visit Website
+                    </a>
+                    <a href="https://github.com/myrosama/DaemonClient" target="_blank" class="btn btn-secondary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://pypi.org/project/daemon-cli/" target="_blank" class="btn btn-secondary">
+                        PyPI
+                    </a>
+                </div>
             </header>
 
-            <!-- Problem & Solution -->
+            <!-- Screenshots -->
             <section class="project-section">
-                <h2 class="section-heading">The Problem</h2>
+                <h2 class="section-heading">Screenshots</h2>
+                <div class="screenshot-gallery">
+                    <div class="screenshot-item">
+                        <img src="photos/DaemonClient/dashboard.png" alt="DaemonClient Dashboard">
+                        <div class="screenshot-caption">Dashboard — Upload, download and manage encrypted files</div>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="photos/DaemonClient/setup.png" alt="DaemonClient Setup">
+                        <div class="screenshot-caption">One-Time Setup — Automated bot and channel creation</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Overview -->
+            <section class="project-section">
+                <h2 class="section-heading">Overview</h2>
                 <p class="section-text">
-                    Managing daemon processes on remote servers typically requires SSH access and command-line
-                    knowledge.
-                    There's no easy way to monitor, start, stop, or restart services without terminal access.
+                    Unlike traditional cloud services that rent storage, DaemonClient gives users full ownership of
+                    their infrastructure. The platform provisions a Telegram bot and private channel for each user.
+                    The setup process consists of creating the bot, establishing a secure channel, and transferring
+                    ownership to the user. Once ownership is transferred, the developers delete their credentials,
+                    ensuring that only the user controls the vault.
                 </p>
             </section>
 
+            <!-- How It Works -->
             <section class="project-section">
-                <h2 class="section-heading">The Solution</h2>
+                <h2 class="section-heading">How It Works</h2>
                 <p class="section-text">
-                    DaemonClient provides a clean web interface for daemon management.
-                    View process status, memory usage, and logs in real-time.
-                    Start, stop, and restart services with a single click.
+                    The protocol uses "atomic chunking"—large files are split into 19 MB encrypted shards in the
+                    browser to bypass Telegram's file-size limit and enable parallel uploads. A custom Cloudflare
+                    Worker acts as a proxy so that data flows from the user's device to Telegram without passing
+                    through DaemonClient's servers. Metadata about which shards belong to a particular file is stored
+                    in Firebase, allowing the client to reconstruct files on download.
+                </p>
+
+                <img src="photos/DaemonClient/architecture.png" alt="Architecture Overview" class="architecture-image">
+            </section>
+
+            <!-- Security Model -->
+            <section class="project-section">
+                <h2 class="section-heading">Security Model</h2>
+                <p class="section-text">
+                    The security model relies on AES-256-GCM encryption and PBKDF2 key derivation. Keys exist only
+                    in memory and are destroyed on logout. Files are encrypted before leaving the user's device,
+                    meaning that neither DaemonClient's servers nor Telegram can read the contents.
                 </p>
             </section>
 
@@ -52,60 +262,79 @@
                 <h2 class="section-heading">Key Features</h2>
                 <div class="features-grid">
                     <div class="feature-item">
-                        <span class="feature-icon">📊</span>
-                        <div class="feature-content">
-                            <h3>Real-time Monitoring</h3>
-                            <p>Live CPU, memory, and uptime stats for each process</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🎛️</span>
-                        <div class="feature-content">
-                            <h3>Process Control</h3>
-                            <p>Start, stop, restart daemons with one click</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">📜</span>
-                        <div class="feature-content">
-                            <h3>Log Viewer</h3>
-                            <p>Stream logs in real-time, search and filter</p>
-                        </div>
-                    </div>
-                    <div class="feature-item">
                         <span class="feature-icon">🔐</span>
                         <div class="feature-content">
-                            <h3>Secure Access</h3>
-                            <p>Authentication and encrypted connections</p>
+                            <h3>Zero-Knowledge Encryption</h3>
+                            <p>Files are encrypted with AES-256-GCM before leaving the user's device</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">♾️</span>
+                        <div class="feature-content">
+                            <h3>Unlimited Storage</h3>
+                            <p>Leverages Telegram's file limits to provide storage at no cost</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <div class="feature-content">
+                            <h3>Blazing-Fast Transfers</h3>
+                            <p>Concurrent chunking enables parallel uploads and downloads</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🤖</span>
+                        <div class="feature-content">
+                            <h3>One-Click Setup</h3>
+                            <p>Automated bot and channel creation with ownership transfer</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">💻</span>
+                        <div class="feature-content">
+                            <h3>Multi-Platform Access</h3>
+                            <p>Web dashboard and CLI tool for power users</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔑</span>
+                        <div class="feature-content">
+                            <h3>Ephemeral Keys</h3>
+                            <p>Encryption keys exist only in memory, never transmitted or stored</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Tech Stack -->
+            <!-- Technology Stack -->
             <section class="project-section">
-                <h2 class="section-heading">Tech Stack</h2>
-                <div class="tech-pills">
-                    <span class="tech-pill">HTML</span>
-                    <span class="tech-pill">JavaScript</span>
-                    <span class="tech-pill">WebSocket</span>
-                    <span class="tech-pill">Node.js</span>
-                    <span class="tech-pill">Linux systemd</span>
-                </div>
-            </section>
-
-            <!-- Links -->
-            <section class="project-section">
-                <h2 class="section-heading">Links</h2>
-                <div class="project-links">
-                    <a href="https://github.com/myrosama/DaemonClient" target="_blank" class="project-link">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                        View on GitHub
-                    </a>
-                </div>
+                <h2 class="section-heading">Technology Stack</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Frontend</th>
+                        <td>React, Vite, Tailwind CSS</td>
+                    </tr>
+                    <tr>
+                        <th>Backend (Setup)</th>
+                        <td>Python, Flask, Telethon</td>
+                    </tr>
+                    <tr>
+                        <th>Backend (Proxy)</th>
+                        <td>TypeScript on Cloudflare Workers</td>
+                    </tr>
+                    <tr>
+                        <th>Database & Auth</th>
+                        <td>Firebase Firestore, Firebase Authentication</td>
+                    </tr>
+                    <tr>
+                        <th>Encryption</th>
+                        <td>Web Crypto API (AES-256-GCM, PBKDF2)</td>
+                    </tr>
+                    <tr>
+                        <th>Infrastructure</th>
+                        <td>Telegram Bot API</td>
+                    </tr>
+                </table>
             </section>
 
             <nav class="nav horizontal" style="margin-top: 48px;">

@@ -12,11 +12,29 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="project-styles.css">
     <style>
-        /* ALFASAT Clean Styles */
+        /* ALFASAT Styles */
 
-        /* Hero - minimal and clean */
+        /* Hero with logo on right */
         .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
             margin-bottom: 48px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 24px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: #fff;
+            padding: 12px;
         }
 
         .hero-top {
@@ -53,7 +71,7 @@
             font-size: 17px;
             line-height: 1.6;
             color: #999;
-            max-width: 600px;
+            max-width: 550px;
             margin-bottom: 20px;
         }
 
@@ -82,7 +100,7 @@
             height: 16px;
         }
 
-        /* Large Screenshots Grid */
+        /* Horizontal Scroll Screenshots - Larger */
         .screenshots-section {
             margin-bottom: 48px;
         }
@@ -93,20 +111,39 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #666;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .screenshots-scroll {
+            display: flex;
             gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 16px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .screenshots-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .screenshots-scroll::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 3px;
+        }
+
+        .screenshots-scroll::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 3px;
         }
 
         .screenshot-card {
+            flex-shrink: 0;
+            width: 500px;
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.08);
             background: rgba(255, 255, 255, 0.02);
+            scroll-snap-align: start;
         }
 
         .screenshot-card img {
@@ -119,10 +156,6 @@
             font-size: 14px;
             color: #888;
             background: rgba(0, 0, 0, 0.3);
-        }
-
-        .screenshot-card.full-width {
-            grid-column: span 2;
         }
 
         /* Content sections */
@@ -189,16 +222,22 @@
         }
 
         @media (max-width: 700px) {
-            .screenshots-grid {
-                grid-template-columns: 1fr;
+            .hero {
+                flex-direction: column;
             }
 
-            .screenshot-card.full-width {
-                grid-column: span 1;
+            .hero-logo {
+                width: 72px;
+                height: 72px;
+                order: -1;
             }
 
             .hero h1 {
                 font-size: 2rem;
+            }
+
+            .screenshot-card {
+                width: 320px;
             }
         }
     </style>
@@ -209,34 +248,37 @@
         <main class="content project-content">
             <a href="projects.html" class="back-link">← back to projects</a>
 
-            <!-- Hero -->
+            <!-- Hero with logo on right -->
             <header class="hero">
-                <div class="hero-top">
-                    <span class="status-badge">Active</span>
-                    <span class="status-text">B2B Platform</span>
+                <div class="hero-content">
+                    <div class="hero-top">
+                        <span class="status-badge">Active</span>
+                        <span class="status-text">B2B Platform</span>
+                    </div>
+                    <h1>ALFASAT</h1>
+                    <p class="hero-desc">A Digital SAT testing platform for learning centres and students, enabling
+                        high-fidelity practice tests with automated scoring based on official College Board conversion
+                        tables.</p>
+                    <div class="hero-links">
+                        <a href="https://alfasat.uz" target="_blank">alfasat.uz ↗</a>
+                        <a href="https://github.com/myrosama/ALFA_SAT" target="_blank">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                            GitHub
+                        </a>
+                    </div>
                 </div>
-                <h1>ALFASAT</h1>
-                <p class="hero-desc">A Digital SAT testing platform for learning centres and students, enabling
-                    high-fidelity practice tests with automated scoring based on official College Board conversion
-                    tables.</p>
-                <div class="hero-links">
-                    <a href="https://alfasat.uz" target="_blank">alfasat.uz ↗</a>
-                    <a href="https://github.com/myrosama/ALFA_SAT" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                        </svg>
-                        GitHub
-                    </a>
-                </div>
+                <img src="photos/alfaSAT/logo.png" alt="ALFASAT Logo" class="hero-logo">
             </header>
 
-            <!-- Screenshots - Large and Prominent -->
+            <!-- Screenshots - Horizontal Scroll -->
             <section class="screenshots-section">
                 <h2>Screenshots</h2>
-                <div class="screenshots-grid">
-                    <figure class="screenshot-card full-width">
-                        <img src="photos/alfaSAT/Login_signup.png" alt="ALFASAT Login">
+                <div class="screenshots-scroll">
+                    <figure class="screenshot-card">
+                        <img src="photos/alfaSAT/Login_signup.png" alt="Login">
                         <figcaption>Login & Sign Up</figcaption>
                     </figure>
                     <figure class="screenshot-card">
@@ -244,24 +286,24 @@
                         <figcaption>Student Dashboard</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="photos/alfaSAT/Test.png" alt="Test Interface">
+                        <img src="photos/alfaSAT/Test.png" alt="Test">
                         <figcaption>Test Interface</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="photos/alfaSAT/Mathpart.png" alt="Math Section">
-                        <figcaption>Math Section with Desmos Calculator</figcaption>
+                        <img src="photos/alfaSAT/Mathpart.png" alt="Math">
+                        <figcaption>Math Section with Desmos</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="photos/alfaSAT/Admit_Menu.png" alt="Admin Menu">
+                        <img src="photos/alfaSAT/Admit_Menu.png" alt="Admin">
                         <figcaption>Admin Menu</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="photos/alfaSAT/Edit_Test.png" alt="Test Editor">
+                        <img src="photos/alfaSAT/Edit_Test.png" alt="Editor">
                         <figcaption>Test Editor</figcaption>
                     </figure>
                     <figure class="screenshot-card">
-                        <img src="photos/alfaSAT/AI_intergration.png" alt="AI PDF Import">
-                        <figcaption>AI PDF Import (Gemini)</figcaption>
+                        <img src="photos/alfaSAT/AI_intergration.png" alt="AI">
+                        <figcaption>AI PDF Import</figcaption>
                     </figure>
                 </div>
             </section>

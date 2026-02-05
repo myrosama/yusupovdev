@@ -65,6 +65,50 @@
             </div>
         </main>
     </div>
+    <!-- Visitor Notification Script -->
+    <script>
+        (function () {
+            // Only notify once per session to avoid spam
+            if (sessionStorage.getItem('visitor_notified')) return;
+
+            // Gather visitor details
+            const getDeviceType = () => {
+                const ua = navigator.userAgent;
+                if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) return 'Tablet';
+                if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) return 'Mobile';
+                return 'Desktop';
+            };
+
+            const getBrowser = () => {
+                const ua = navigator.userAgent;
+                if (ua.includes('Firefox')) return 'Firefox';
+                if (ua.includes('SamsungBrowser')) return 'Samsung Browser';
+                if (ua.includes('Opera') || ua.includes('OPR')) return 'Opera';
+                if (ua.includes('Edge')) return 'Edge';
+                if (ua.includes('Chrome')) return 'Chrome';
+                if (ua.includes('Safari')) return 'Safari';
+                return 'Unknown';
+            };
+
+            const visitorData = {
+                page: document.title || 'Home',
+                device: getDeviceType(),
+                browser: getBrowser(),
+                screen: `${screen.width}x${screen.height}`,
+                referrer: document.referrer || 'Direct',
+                language: navigator.language || navigator.userLanguage
+            };
+
+            // Send to notification worker
+            fetch('https://telegram-notify.sadrikov49.workers.dev', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(visitorData)
+            })
+                .then(() => sessionStorage.setItem('visitor_notified', 'true'))
+                .catch(err => console.log('Notification skipped'));
+        })();
+    </script>
 </body>
 
 </html>
